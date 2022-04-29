@@ -1,6 +1,7 @@
 import { useState } from "react"
 
 export default function Offers() {
+  const [count, setCount] = useState(0)
   const [items] = useState([
     { title: 'Ninja Hoodie', price: 21.99 },
     { title: 'Ninja Sneakers', price: 34.99 },
@@ -19,6 +20,9 @@ export default function Offers() {
           </div>
         ))}
       </div>
+      <h3>Counter</h3>
+      <div>{count}</div>
+      <button onClick={()=>setCount(prev=>prev+1)}>Increment</button>
     </div>
   )
 }
